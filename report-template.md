@@ -35,7 +35,7 @@ The results form machine learning on the original data Model 1 and on the oversa
 * Machine Learning Model 2:
 * 
     * Accuracy                            95.20%
-    * Precision (Healthy Loan)            1
+    * Precision (Healthy Loan)            100%
     * Precision (High Risk Loan)          85%
     * Recall (Healthy Loan)               99%
     * Recall (High Risk Loan)             91%
