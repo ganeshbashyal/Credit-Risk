@@ -1,31 +1,46 @@
-# Module 12 Report Template
-
 ## Overview of the Analysis
 
 In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+## Credit Risk
+
+Effective portfolio management does not only focus on distribution of funds but also identifying the type of risks and mitigate or eliminate. For a Bank the risk of credit risk is default on a debt by the borrower due to failed payments. The goal of Credit Risk identification and mitigation is to maximise the risk adjusted rate of return by maintaining credit risk exposure within acceptable parameters.
+
+The proportion of healthy loans are a lot higher than the number of risky loans. Thus, the problem itself poses a classification problem that is inherently imbalanced.
+
+
+
+
+## Analysing Data using Pyhton
+
+In this analysis, Python will be used to perform machine learning in a credit data analysis. Initially data is imported to python from the lending_data.csv file provided. To clean up the data and have the structure ready, data is split into label sets(y) and features(X). The values of 0 in label sets implies that the loan is healthy and the value of 1 means that the loan has a higher risk of defaulting. 
+
+The data is then split into training and testing data using train test split. A logistic Regression mode is then created with the original data. The data is then then resampled and another prediction is made through logistic regression this helps with the mitigation of the imbalance within the dataset. Since this problem is an imbalanced problem, several methods need to be explored thus, a confusion matrix and classification report is generated based on both models and comparison is made on the findings to determine the best model to use.
+
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+The results form machine learning on the original data Model 1 and on the oversampled data on Model 2 are as follows:
 
 * Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+
+  * Accuracy                            95.20%
+  * Precision (Healthy Loan)            100%
+  * Precision (High Risk Loan)          85%
+  * Recall (Healthy Loan)               99%
+  * Recall (High Risk Loan)             91%
 
 
 
 * Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+* 
+    * Accuracy                            95.20%
+    * Precision (Healthy Loan)            1
+    * Precision (High Risk Loan)          85%
+    * Recall (Healthy Loan)               99%
+    * Recall (High Risk Loan)             91%
+
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
+Since both models have similar accuracy it is challenging to choose the model to use but since we know that the precision is more important than recall on the high risk loan; the model with over sampled data is recommended. 
